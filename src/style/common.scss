@@ -1,0 +1,186 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+html, body, #app{
+  height: 100%;
+  font-family:'San Francisco','PingFang SC','Noto','Roboto','Microsoft Yahei';
+  font-size:0.32rem;
+  background: #F7F7F7;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+.com-flex{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+[lazy=loading]{
+	width: 2rem !important;
+	height: 2rem !important;
+	margin: auto;
+}
+img{
+	max-width:100%;
+}
+.form-button{
+	padding: 0 0.24rem;
+	margin: 0.4rem 0;
+}
+.btn{
+	border-radius: 0.06rem;
+}
+.lg.btn{
+	width:100%;
+	height:0.90rem;
+	line-height: 0.90rem;
+	font-size: 0.32rem;
+}
+.md.btn{
+	width:2.74rem;
+	height: 0.86rem;
+	line-height: 0.86rem;
+}
+.sm.btn{
+
+}
+.main.btn{
+	background:$mc;
+	color:#fff;
+	border:0.01rem solid $mc;
+}
+.plain.btn{
+	color:$mc;
+	background:#fff;
+	border:0.01rem solid $mc;
+}
+.disabled.btn{
+	background:#BBBBBB;
+	color:#fff;
+	border:0.01rem solid #BBBBBB;
+}
+// #app .van-cell{
+// 		padding: 0.40rem 0.24rem;
+// 		height: 1.10rem;
+// 		padding: 0 0.24rem;
+// 		align-items: center;
+// }
+// #app .van-cell:after{
+// 	left:0.24rem;
+// 	width:calc(100% - 0.48rem);
+// 	border-bottom:1rem solid #eee;
+// }
+// #app .van-cell-group__title{
+// padding: 0.30rem 0.24rem;
+// color:#666;
+// }
+// #app .van-cell__title{
+// color:#000;
+// font-size: 0.32rem;
+// }
+// #app .van-cell__value{
+// 	font-size: 0.28rem;
+// }
+// #app .van-icon-arrow.van-cell__right-icon{
+// 	color:#ccc;
+// 	font-size: 0.24rem;
+// }
+// #app .van-cell-group__title+.van-cell-group:after{
+// 	display:none;
+// }
+
+// #app .van-nav-bar__title{
+//   font-size: 0.32rem;
+// }
+#app .van-cell {
+  padding: 0.20rem 0.32rem;
+  font-size: 0.28rem;
+  line-height: 0.48rem;
+}
+#app .van-cell__value {
+  font-size: .32rem;
+}
+#app .van-field__label {
+  width: 2rem;
+  font-size: 0.32rem;
+}
+
+#app .van-nav-bar {
+  height: 0.84rem;
+  line-height: 0.84rem;
+}
+
+#app .van-nav-bar__title {
+  font-size: 0.32rem;
+}
+
+#app .van-nav-bar__left, .van-nav-bar__right {
+  font-size: 0.42rem;
+}
+
+#app .van-button {
+  height: 0.88rem;
+  font-size: 0.32rem;
+  line-height: 0.84rem;
+}
+
+#app .van-button--normal {
+  padding: 0 0.30rem;
+  font-size: 0.28rem;
+}
+// Custom public style...
+
+
+.form-group{
+
+}
+.van-picker__cancel{
+	color: #999 !important;
+	font-size: 0.16rem;
+}
+.van-picker__confirm{
+	color: #DE3B31 !important;
+	font-size: 0.16rem;
+}
