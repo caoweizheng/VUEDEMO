@@ -3,7 +3,7 @@
     <van-nav-bar
       title="LOGIN"
       @click-left="onClickLeft">
-      <van-icon name="arrow-left" color="rgb(19, 18, 18)" size="32px" slot="left" />
+      <van-icon name="arrow-left" color="rgb(19, 18, 18)" size="0.32rem" slot="left" />
     </van-nav-bar>
     <van-cell-group>
       <van-field
@@ -17,8 +17,9 @@
         type="password"
         name="PASSWORD"
         label="PASSWORD"
-        :rules="[{ required: true, message: 'PASSWORD' }]"
-      />
+        :rules="[{ required: true, message: 'PASSWORD' }]">
+      <!-- <van-icon :name="showPW ? 'eye-o' : 'closed-eye'" @click="showPW = !showPW" color="rgb(19, 18, 18)" size="0.32rem" slot="right" /> -->
+      </van-field>
     </van-cell-group>
     <div style="margin: 32px;">
       <van-button block type="primary" @click="login(username,password)">
@@ -44,22 +45,34 @@ export default {
     return {
       username: '',
       password: '',
-    };
+      showPW: false
+    }
   },
   methods: {
     onClickLeft() {
       //
     },
     login (un, pd) {
-      this.username = '';
-      this.password = '';
-      console.log(un, pd);
-      this.$http.post(params, 'login').then((resp) => {
-
-      });
+      let params = {
+        username: this.username,
+        password: this.password
+      }
+      if( !this.username || !this.password) {
+        this.$toast({
+          message: '请输入账号/密码',
+          position: 'bottom',
+          duration: '800'
+        })
+        return;
+      }
+      this.$http.queryUserInfo(params).then((resp) => {
+        this.username = ''
+        this.password = ''
+        this.$router.push('/')
+      })
     }
   },
-};
+}
 </script>
 
 <style lang="scss" scoped>

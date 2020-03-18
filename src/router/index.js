@@ -7,8 +7,8 @@ Vue.use(Router)
 const routes = [
   {
     path: '/',
-    name: 'HelloWorld',
-    component: () => import('@/components/HelloWorld')
+    name: 'home',
+    component: () => import('@/pages/home/index')
   },
   {
     path: '/login',
@@ -19,6 +19,16 @@ const routes = [
     path: '/nav',
     name: 'navigate',
     component: () => import('@/pages/navigate/index')
+  },
+  {
+    path: '/search',
+    name: 'search',
+    component: () => import('@/pages/search/index')
+  },
+  {
+    path: '/mine',
+    name: 'mine',
+    component: () => import('@/pages/mine/index')
   }
 ]
 

@@ -1,17 +1,17 @@
 <template>
-  <common-nav :active="'nav'"/>
+  <common-nav :active="'mine'"/>
 </template>
 
 <script>
 import commonNav from "@/components/Nav";
 export default {
-  name: 'my-nav',
+  name: 'my-mine',
   components: {
     commonNav: commonNav
   },
   data () {
     return {
-      // active: 'nav'
+      // active: 'mine'
     }
   }
 }

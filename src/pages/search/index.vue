@@ -1,5 +1,5 @@
 <template>
-  <common-nav :active="'nav'"/>
+  <common-nav :active="'search'"/>
 </template>
 
 <script>
@@ -11,7 +11,7 @@ export default {
   },
   data () {
     return {
-      // active: 'nav'
+      // active: 'search'
     }
   }
 }
