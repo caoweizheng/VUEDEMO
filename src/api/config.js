@@ -30,4 +30,9 @@ export default {
       return resp
     })
   },
+  queryGoodsList (params) {
+    return axios.post('/queryGoodsList', params).then(resp => {
+      return resp
+    })
+  },
 }

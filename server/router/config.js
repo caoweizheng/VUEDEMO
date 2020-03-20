@@ -98,12 +98,39 @@ module.exports = {
         contents.push({
           id: i,
           text: title + '-' + i,
-          imgPath: 'https://tse1-mm.cn.bing.net/th/id/OIP.HGu4nDYFSlYtXhqqcg_y-gHaKY?w=134&h=187&c=7&o=5&pid=1.7'
+          imgPath: 'https://img2.epetbar.com/nowater/2018-08/14/21/24ca86bfa5a3a95c5a3e0091a51e214c.jpg?x-oss-process=style/fill&$1=300&$2=300'
         })
       }
       res.send({
         code: 0,
         data: contents
+      })
+    }),
+    app.post('/queryGoodsList', async (req, res) => {
+      let pageNum = req.body.pageNumber
+      let pageSize = req.body.pageSize
+      let goodsList = [];
+      let id = pageNum == 0 ? 0 : pageNum * pageSize;
+      if(id >= 200){
+        res.send({
+          code: 0,
+          data: []
+        })
+        return;
+      }
+      for (let i = 1; i <= pageSize; i++) {
+        goodsList.push({
+          id: id++,
+          comments: "互动:(99%好评)",
+          sold: "售出:5.88w",
+          subject: "BOTH 全犬山羊奶布丁 单粒",
+          sale_price: "1.60",
+          imgPath: 'https://img2.epetbar.com/2016-03/29/10/2a220b559ba8f056031304855d2521b1.jpg'
+        })
+      }
+      res.send({
+        code: 0,
+        data: goodsList
       })
     })
 	}

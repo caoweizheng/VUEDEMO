@@ -9,19 +9,22 @@
     </div>
     <div class="p-s">
       <van-list @load="queryGoodsList" :finished="isFinish" :finished-text="finishedText">
-        <van-cell class="mb-d clear-p" v-for="item in 10" :key="item">
+        <van-cell class="mb-d clear-p" v-for="item in goodsList" :key="item.id">
           <a class="list-item">
             <div class="img-box mr-xs">
-              <img src="https://tse1-mm.cn.bing.net/th/id/OIP.HGu4nDYFSlYtXhqqcg_y-gHaKY?w=134&h=187&c=7&o=5&pid=1.7" alt="">
+              <img :src="item.imgPath" alt="">
             </div>
             <div class="item-l">
-              <p class="title">雷米高 犬用驱虫一粒清阿苯达唑片 0.2g*4片</p>
+              <p class="title">{{item.subject}}</p>
               <div class="item-price-box">
                 <div>
-                  <p>价格</p>
-                  <p>数量</p>
+                  <p class="price">￥{{item.sale_price}}</p>
+                  <p class="count">
+                    <span>{{item.comments}}</span>
+                    <span>{{item.sold}}</span>
+                  </p>
                 </div>
-                <img width="50" src="https://tse1-mm.cn.bing.net/th/id/OIP.HGu4nDYFSlYtXhqqcg_y-gHaKY?w=134&h=187&c=7&o=5&pid=1.7" alt="">
+                <img width="50" src="//static.epetbar.com/static_wap/epetapp/pages/index/images/addcart.png" alt="">
               </div>
             </div>
           </a>
@@ -47,8 +50,10 @@ export default {
     return {
       active: 0,
       selectItems: [],
+      goodsList: [],
       isFinish: false,
-      finishedText: '没有了喔~~'
+      finishedText: '没有了喔~~',
+      pageNumber: 0
     }
   },
   async created () {
@@ -58,7 +63,12 @@ export default {
   },
   methods: {
     async queryGoodsList () {
-      // await
+      let resp = await this.$http.queryGoodsList({pageNumber: this.pageNumber ++ , pageSize: 20})
+      if(!resp || !resp.data || !resp.data.length){
+        this.isFinish = true
+        return
+      }
+      this.goodsList = this.$_.concat(this.goodsList, resp.data)
     }
   }
 }
@@ -70,6 +80,7 @@ export default {
   .list-item {
     display: flex;
     .img-box {
+      width: 2rem;
       display: flex;
       align-items: center;
     }
@@ -94,6 +105,16 @@ export default {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      .price {
+        color: $color_danger;
+        font-size: 0.28rem;
+      }
+      .count {
+        span {
+          font-size: 0.24rem;
+          color: $color_sub;
+        }
+      }
     }
   }
 }
