@@ -5,6 +5,7 @@ import Vuex from 'vuex'
 import App from './App'
 import router from './router'
 import { Lazyload, Toast } from "vant";
+import lodash from "lodash";
 import api from "./api"
 import store from './store'
 
@@ -17,6 +18,7 @@ Vue.use(Vuex)
 // Vue.component('common-nav', '@/components/Nav')s
 
 Vue.prototype.$toast = Toast
+Vue.prototype.$_ = lodash
 
 /* eslint-disable no-new */
 new Vue({

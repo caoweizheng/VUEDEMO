@@ -15,4 +15,19 @@ export default {
       return resp
     })
   },
+  queryDataList (params) {
+    return axios.post('/queryDataList', params).then(resp => {
+      return resp
+    })
+  },
+  queryNavigate (params) {
+    return axios.post('/queryNavigate', params).then(resp => {
+      return resp
+    })
+  },
+  queryNavigateContents (params) {
+    return axios.post('/queryNavigateContents', params).then(resp => {
+      return resp
+    })
+  },
 }
