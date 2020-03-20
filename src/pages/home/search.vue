@@ -1,9 +1,14 @@
 <template>
-  <van-search shape="round" :placeholder="placeholder"></van-search>
+  <van-sticky>
+    <div class="search">
+      <van-search shape="round" :placeholder="placeholder"></van-search>
+    </div>
+  </van-sticky>
 </template>
 
 <script>
-import { Search } from "vant";
+import { Search, Sticky} from "vant";
+
 export default {
   name: 'search',
   data () {
@@ -12,7 +17,8 @@ export default {
     }
   },
   components: {
-    [Search.name]: Search
+    [Search.name]: Search,
+    [Sticky.name]: Sticky,
   }
 }
 </script>
@@ -23,6 +29,15 @@ export default {
   }
   .van-search {
     background-color: $color_primary;
+  }
+  .search {
+    position: fixed;
+    width: 100%;
+    height: 1.08rem;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background-color: $color_void;
   }
 </style>
 

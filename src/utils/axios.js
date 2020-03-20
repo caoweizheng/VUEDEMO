@@ -41,7 +41,7 @@ function errorState (response) {
     return response;
   } else {
     // 数据返回失败处理
-    Toast('数据返回失败')
+    Toast('请求失败')
   }
 }
 // 封装数据返回成功

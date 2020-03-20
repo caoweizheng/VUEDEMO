@@ -19,7 +19,7 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
+  font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
 }
@@ -231,6 +231,9 @@ img{
 }
 
 /* margin-right */
+.mr-xs {
+  margin-right: 0.08rem !important;
+}
 .mr-sm,
 .mr-16 {
   margin-right: 0.16rem !important;
@@ -410,6 +413,10 @@ img{
   -webkit-box-orient: vertical;
 }
 
+.clear-p {
+  padding: 0 !important;
+}
+
 /* letter-spacing */
 // .ls-o1 {
 //   letter-spacing: -0.01rem;
@@ -423,6 +430,10 @@ img{
   padding-left: $wind;
   padding-right: $wind;
 }
+.p-s {
+  padding-left: $s;
+  padding-right: $s;
+}
 .p-sw {
   padding: $space $wind !important;
 }
@@ -431,6 +442,11 @@ img{
 }
 .user-select {
   -webkit-user-select: text !important;
+}
+
+.v-c {
+  position: relative;
+  top: 25%;
 }
 // #app .van-cell{
 // 		padding: 0.40rem 0.24rem;
@@ -502,6 +518,26 @@ img{
   font-size: 0.28rem;
 }
 
+#app .van-tab {
+  font-size: 0.30rem;
+  padding: $s;
+}
+
+#app .van-tabs--line .van-tabs__wrap {
+  height: auto;
+}
+
+#app .van-tabs__nav--line {
+  padding-bottom: 0;
+}
+
+#app .van-tabs__line {
+  height: 0.05rem;
+  bottom: 0;
+  border-radius: 0.03rem;
+  background-color: $color_primary;
+}
+
 #app .van-tabbar {
   height: 1rem;
 }
@@ -521,6 +557,11 @@ img{
   background-color: $color_void;
 }
 
+#app .van-list__error-text, #app .van-list__finished-text, #app .van-list__loading {
+  font-size: 0.3rem;
+  line-height: 0.8rem;
+}
+.van-list__finished-text
 
 .van-toast {
   font-size: 0.24rem;
@@ -549,10 +590,36 @@ img{
   margin-top: 0.1rem
 }
 
-#app .van-grid-item__content {
-  background-color: $color_primary;
+#app .van-tree-select__nav-item {
+  padding: 0;
 }
 
+#app .van-sidebar-item {
+  font-size: 0.28rem;
+  padding: $wind $wind;
+  border-left: 0.08rem solid transparent;
+  line-height: 0.28rem;
+  background-color: $color_void;
+  margin-bottom: 0.03rem;
+}
+
+#app .van-sidebar-item--select {
+  border-color: $color_primary;
+  border-width: 0.08rem;
+  background-color: $color_bg;
+}
+
+#app .van-sidebar-item--select, #app .van-sidebar-item--select:active {
+  color: $color_primary;
+}
+
+#app .van-tree-select {
+  font-size: 0.32rem;
+}
+#app .van-tree-select__content {
+  flex: 3;
+  margin-left: 0.08rem;
+}
 // Custom public style...
 
 

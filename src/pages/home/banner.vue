@@ -1,7 +1,9 @@
 <template>
-  <van-swipe class="my-swipe" :autoplay="3000">
-    <van-swipe-item :key="idx" v-for="(item, idx) in banners">{{item.text}}</van-swipe-item>
-  </van-swipe>
+  <div>
+    <van-swipe class="my-swipe" :autoplay="3000">
+      <van-swipe-item :key="idx" v-for="(item, idx) in banners">{{item.text}}</van-swipe-item>
+    </van-swipe>
+  </div>
 </template>
 
 <script>
@@ -29,11 +31,11 @@ export default {
 
 <style lang="scss" scoped>
 .my-swipe {
-  // height: 3rem;
+  height: 3rem;
+  line-height: 3rem;
   .van-swipe-item {
     color: #fff;
     font-size: 0.3rem;
-    line-height: 3rem;
     text-align: center;
     background-color: $color_primary;
   }
